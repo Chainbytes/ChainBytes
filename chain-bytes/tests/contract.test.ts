@@ -8,8 +8,8 @@ import {
 } from "matchstick-as/assembly/index"
 import { Address, BigInt } from "@graphprotocol/graph-ts"
 import { OwnershipTransferred } from "../generated/schema"
-import { OwnershipTransferred as OwnershipTransferredEvent } from "../generated/Contract/Contract"
-import { handleOwnershipTransferred } from "../src/contract"
+import { OwnershipTransferred as OwnershipTransferredEvent } from "../generated/coffee/coffee"
+import { handleOwnershipTransferred } from "../src/coffee"
 import { createOwnershipTransferredEvent } from "./contract-utils"
 
 // Tests structure (matchstick-as >=0.5.0)

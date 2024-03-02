@@ -1,6 +1,6 @@
 specVersion: 0.0.4
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: coffee
@@ -20,7 +20,7 @@ dataSources:
         - workerPaid
       abis:
         - name: coffee
-          file: ./abis/coffee.json
+          file: coffee/abis/coffee.json
       eventHandlers:
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
@@ -32,4 +32,4 @@ dataSources:
           handler: handleworkerCheckedIn
         - event: workerPaid(address,address[],uint256[],string)
           handler: handleworkerPaid
-      file: ./src/coffee.ts
+      file: coffee/coffee.wasm

@@ -6,7 +6,7 @@ import {
   newForeman,
   workerCheckedIn,
   workerPaid
-} from "../generated/Contract/Contract"
+} from "../generated/coffee/coffee"
 
 export function createOwnershipTransferredEvent(
   previousOwner: Address,
