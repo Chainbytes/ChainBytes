@@ -138,7 +138,8 @@ Run all commands in order in the `coffee-subgraph` folder
   * Builds a subgraph and (optionally) uploads it to IPFS
   * Creates contents of build folder which is used in deployment
 * To deploy to hosted service/subgraph studio
-  * `$ graph deploy jossduff/coffee-subgraph subgraph.yaml`
+  * ~~`$ graph deploy jossduff/coffee-subgraph subgraph.yaml`~~
+  * `$ graph deploy --studio chain-bytes`
   * Select “Hosted Service”
   * Deploys the subgraph to a Graph node
   * Go to above “deployed subgraph” link and wait for it to sync (10-20 mins)

@@ -54,13 +54,14 @@ type Farm @entity {
 type Foreman @entity {
   # address
   id: String!
-  # Each forman is associated with ONE farm
+  # Each forman is associated with ONE farm, so one side stored one side derived 
+  # relationship stored on the one side and the many side should be derived
   hasFarm: Farm!
   # Each foreman makes many checkin events
   madeCheckIns: [CheckIn!] @derivedFrom(field: "foremanWhoChecked")
   # Each foremen is associated with many workers.
   hasWorkers: [Worker!] @derivedFrom(field: "hasForeman")
-}
+} 
 
 # payment is a historical value, so it shouldn't be mutable
 type Payment @entity(immutable: true) {
