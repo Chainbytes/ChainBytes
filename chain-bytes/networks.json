@@ -1,8 +1,8 @@
 {
-  "goerli": {
+  "sepolia": {
     "Contract": {
-      "address": "0x9E2eF6C92dC1D724c1E4dFdB22AcAcd3B80cC26B",
-      "startBlock": 8509111
+      "address": "0x3489dF9F50E056F5Bd986317Efaf3e301Dfd5cAf",
+      "startBlock": 5555956
     }
   }
 }

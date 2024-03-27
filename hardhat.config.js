@@ -30,23 +30,22 @@ const DEPLOYER_PRIVATE_KEY = process.env.DEPLOYER_PRIVATE_KEY;
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 
 module.exports = {
-  defaultNetwork: "hardhat",
+  defaultNetwork: "sepolia",
   networks: {
     hardhat: {},
-    goerli: {
-      url: `https://eth-goerli.g.alchemy.com/v2/${ALCHEMY_PROJECT_ID}`,
+    sepolia: {
+      chainId: 11155111,
+      url: ALCHEMY_PROJECT_ID,
       accounts: [DEPLOYER_PRIVATE_KEY]
     },
-    // lueth: {
-    //   url: "http://vitalik.cse.lehigh.edu:8545",
-    //   accounts: [""]  // Insert private key in quotes, and uncomment this block
-    // }
   },
   solidity: {
     version: "0.8.7",
   },
   etherscan: {
-    apiKey: ETHERSCAN_API_KEY,
+    apiKey: {
+      sepolia: ETHERSCAN_API_KEY,
+    },
   },
   paths: {
     sources: "./contracts",

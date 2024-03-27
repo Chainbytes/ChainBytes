@@ -4,9 +4,9 @@ schema:
 dataSources:
   - kind: ethereum
     name: coffee
-    network: goerli
+    network: sepolia
     source:
-      address: "0x9E2eF6C92dC1D724c1E4dFdB22AcAcd3B80cC26B"
+      address: "0x3489dF9F50E056F5Bd986317Efaf3e301Dfd5cAf"
       abi: coffee
     mapping:
       kind: ethereum/events
