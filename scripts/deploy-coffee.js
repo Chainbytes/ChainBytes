@@ -5,7 +5,15 @@ const hre = require('hardhat');
 const ethers = hre.ethers;
 
 // Configuration for this deployment.
+/*
 const options = { gasLimit: ethers.BigNumber.from(6000000), gasPrice: ethers.utils.parseEther('0.000000005') };
+*/
+
+const options = {
+    gasLimit: ethers.BigNumber.from(6000000),
+    gasPrice: ethers.utils.parseUnits("400", "gwei"),
+};
+
 
 // Log the gas cost of a transaction.
 async function logTransactionGas (transaction) {
@@ -36,7 +44,7 @@ async function main () {
     totalGasCost = totalGasCost.add(await logTransactionGas(itemCollectionDeploy.deployTransaction)); //spends my eth to finalize on chain
 
     // Verify the smart contract on Etherscan.
-    console.log(`[$]: npx hardhat verify --network goerli ${itemCollection.address}`);
+    console.log(`[$]: npx hardhat verify --network sepolia ${itemCollection.address}`);
 
     // Output the final gas cost.
     console.log('');

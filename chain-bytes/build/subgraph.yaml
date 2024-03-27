@@ -6,7 +6,7 @@ dataSources:
     name: coffee
     network: sepolia
     source:
-      address: "0xDB7051D054b00f8650b24D3E828D7276b00751fC"
+      address: "0x3489dF9F50E056F5Bd986317Efaf3e301Dfd5cAf"
       abi: coffee
     mapping:
       kind: ethereum/events
