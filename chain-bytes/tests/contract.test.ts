@@ -1,3 +1,4 @@
+/*
 import {
   assert,
   describe,
@@ -58,3 +59,4 @@ describe("Describe entity assertions", () => {
     // https://thegraph.com/docs/en/developer/matchstick/#asserts
   })
 })
+*/

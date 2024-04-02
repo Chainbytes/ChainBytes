@@ -9,17 +9,58 @@ Our backend is built using Hardhat to set up a smart contract development enviro
 See a list of Hardhat commands with 
 
 `$ npx hardhat`
+
+
 ## Deploy smart contract
-First, set up .env like .sample-env, then
 
-`$ npx hardhat run --network goerli scripts/deploy-coffee.js`
 
-(optional) Verify on etherscan so you can read/write contract and see events
-Paste given verify line from output of above script
+**STEP 1**
 
-ex:
+First, set up .env like .sample-env, which should contain 3 of following API keys:
 
-`$ npx hardhat verify --network goerli 0xdBfE99f836C95f2470adA8980D8ae01b33bD10A1`
+REPLACE ALL [] when entering API KEYS
+
+ALCHEMY_PROJECT_ID="https://eth-sepolia.g.alchemy.com/v2/[API_KEY_HERE]"
+
+https://dashboard.alchemy.com/
+
+DEPLOYER_PRIVATE_KEY="[METAMASK_PRIVATE_KEY]"
+
+https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key
+
+ETHERSCAN_API_KEY="[API_KEY_HERE]"
+
+https://etherscan.io/myapikey
+
+
+**STEP 2**
+Deploy on etherscan, you will need to have sepolia tokens in your account for this to work which can be recieved here: https://www.alchemy.com/faucets/ethereum-sepolia
+
+`$ npx hardhat run --network sepolia scripts/deploy-coffee.js`
+
+example output:
+
+Deploying contracts from: 0x2b32f6d3c0bC480E677D1aC720f779CB95bf6892
+-> Deploying the item collection ...
+* Item collection deployed to: 0DB7051D054b00865024D3E828D7276b00751fC
+-> Gas cost: 1130898
+[$]: npx hardhat verify --network sepolia 0DB7051D054b008650b24D3E828D7276b00751fC
+=> Final gas cost of deployment: 1130898
+
+
+**STEP 3**
+
+Verify on etherscan so you can read/write contract and see events
+
+`$ npx hardhat verify --network sepolia 0DB7051D054b008650b24D3E828D7276b00751fC`
+
+example output:
+
+Successfully submitted source code for contract
+contracts/coffee.sol: coffee at 0DB7051D054b008650b24D3E828D7276b00751fC for verification on the block explorer. Waiting for verification result...
+Successfully verified contract coffee on Etherscan.
+https://sepolia.etherscan.io/address/0DB7051D054b008650b24D3E828D7276b00751fC#code
+
 
 ## Important files
 `hardhat.config.js`
