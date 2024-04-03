@@ -16,37 +16,44 @@ See a list of Hardhat commands with
 
 **STEP 1**
 
-First, set up .env like .sample-env, which should contain 3 of following API keys:
+Set up .env like .sample-env, which should contain 3 of following API keys:
 
 REPLACE ALL [] when entering API KEYS
 
+```
 ALCHEMY_PROJECT_ID="https://eth-sepolia.g.alchemy.com/v2/[API_KEY_HERE]"
 
 https://dashboard.alchemy.com/
+```
 
+```
 DEPLOYER_PRIVATE_KEY="[METAMASK_PRIVATE_KEY]"
 
 https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key
+```
 
+```
 ETHERSCAN_API_KEY="[API_KEY_HERE]"
 
 https://etherscan.io/myapikey
-
+```
 
 **STEP 2**
+
 Deploy on etherscan, you will need to have sepolia tokens in your account for this to work which can be recieved here: https://www.alchemy.com/faucets/ethereum-sepolia
 
 `$ npx hardhat run --network sepolia scripts/deploy-coffee.js`
 
 example output:
 
+```
 Deploying contracts from: 0x2b32f6d3c0bC480E677D1aC720f779CB95bf6892
 -> Deploying the item collection ...
 * Item collection deployed to: 0DB7051D054b00865024D3E828D7276b00751fC
 -> Gas cost: 1130898
 [$]: npx hardhat verify --network sepolia 0DB7051D054b008650b24D3E828D7276b00751fC
 => Final gas cost of deployment: 1130898
-
+```
 
 **STEP 3**
 
@@ -56,11 +63,12 @@ Verify on etherscan so you can read/write contract and see events
 
 example output:
 
+```
 Successfully submitted source code for contract
 contracts/coffee.sol: coffee at 0DB7051D054b008650b24D3E828D7276b00751fC for verification on the block explorer. Waiting for verification result...
 Successfully verified contract coffee on Etherscan.
 https://sepolia.etherscan.io/address/0DB7051D054b008650b24D3E828D7276b00751fC#code
-
+```
 
 ## Important files
 `hardhat.config.js`
