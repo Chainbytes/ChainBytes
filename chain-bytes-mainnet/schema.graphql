@@ -1,0 +1,46 @@
+type OwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type newFarm @entity(immutable: true) {
+  id: Bytes!
+  farmAddress: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type newForeman @entity(immutable: true) {
+  id: Bytes!
+  farmAddress: Bytes! # address
+  foreman: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type workerCheckedIn @entity(immutable: true) {
+  id: Bytes!
+  foreman: Bytes! # address
+  worker: [Bytes!]! # address[]
+  date: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type workerPaid @entity(immutable: true) {
+  id: Bytes!
+  farm: Bytes! # address
+  worker: [Bytes!]! # address[]
+  amount: [BigInt!]! # uint256[]
+  date: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

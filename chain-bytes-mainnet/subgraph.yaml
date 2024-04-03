@@ -1,0 +1,38 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: coffee-chain-bytes
+    network: sepolia
+    source:
+      address: "0x3489dF9F50E056F5Bd986317Efaf3e301Dfd5cAf"
+      abi: coffee-chain-bytes
+      startBlock: 5555956
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - OwnershipTransferred
+        - newFarm
+        - newForeman
+        - workerCheckedIn
+        - workerPaid
+      abis:
+        - name: coffee-chain-bytes
+          file: ./abis/coffee-chain-bytes.json
+      eventHandlers:
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: newFarm(address)
+          handler: handlenewFarm
+        - event: newForeman(address,address)
+          handler: handlenewForeman
+        - event: workerCheckedIn(address,address[],string)
+          handler: handleworkerCheckedIn
+        - event: workerPaid(address,address[],uint256[],string)
+          handler: handleworkerPaid
+      file: ./src/coffee-chain-bytes.ts
