@@ -128,9 +128,9 @@ export class workerPaid__Params {
   }
 }
 
-export class coffee_blockchain extends ethereum.SmartContract {
-  static bind(address: Address): coffee_blockchain {
-    return new coffee_blockchain("coffee_blockchain", address);
+export class coffee_chain_bytes extends ethereum.SmartContract {
+  static bind(address: Address): coffee_chain_bytes {
+    return new coffee_chain_bytes("coffee_chain_bytes", address);
   }
 
   isFarm(param0: Address): boolean {
